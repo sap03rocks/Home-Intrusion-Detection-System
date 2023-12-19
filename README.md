@@ -31,23 +31,11 @@ By using the start button which is a TTP223B touch sensor we first initialize th
 
 
     3. RESULTS
+    ![image](https://github.com/sap03rocks/Home-Intrution-Detection-System/assets/100368245/c36028ca-1132-4071-b38d-7cc9260ab25e)
+
 
 
 Figure 3: Our Experimental Setup
-
-
-Figure 4: All Readings from the Ultrasonic Sensor Received by Python Script.
-
-
-
-
-Figure 5: MQTT Dashboard with 2 publish topics one for sending messages from the apparatus and one to receive then command
-
-
-Figure 6: SMTP message from the setup about intruder (automated)
-
-
-
     4. CONCLUSION:
 
 Home Intrusion Detection Systems has grown as an important component in protecting residential surroundings from unauthorized access and invasions. This provides early detection, real-time warning, and proactive security measures by integrating modern sensors, surveillance cameras, and intelligent algorithms. The importance of this rests in their capacity to dissuade prospective attackers, provide peace of mind to homeowners, and enable fast reaction to any security risks. Homeowners can improve the security of their houses and protect their loved ones and belongings by installing Home Intrusion Detection Systems. The multi-layered defense mechanisms provided by this, combined with integration with smart home automation systems, form a comprehensive security ecosystem that strengthens the total property defense. Homeowners can keep an eye on their properties and respond quickly even while they are away thanks to real-time monitoring and remote access features.
