@@ -20,13 +20,13 @@ def take_and_send_pics_to_telegram():
     call(["python", "picfortele.py"])
 
 # Replace 'COMX' with the correct port for your Arduino (e.g., 'COM3' on Windows or '/dev/ttyUSB0' on Linux)
-ser = serial.Serial('COM8', 9600)  # Change the baud rate (9600) if your Arduino uses a different rate
+ser = serial.Serial('COM3', 9600)  # Change the baud rate (9600) if your Arduino uses a different rate
 
 # MQTT Settings
-mqtt_broker = 'broker.hivemq.com'  # Replace with the HiveMQ public broker's IP or hostname
-mqtt_port = 1883  # HiveMQ's default MQTT port is 1883
-mqtt_topic_ultrasonic = 'ultrasonic_data'
-mqtt_topic_commands = 'arduino_commands'  # Separate topic for transmitting commands to Arduino
+mqtt_broker = ''  # Replace with the broker
+mqtt_port = 
+mqtt_topic_ultrasonic = ''
+mqtt_topic_commands = ''  
 
 # Initialize MQTT client
 mqtt_client = mqtt.Client()
@@ -34,10 +34,10 @@ mqtt_client = mqtt.Client()
 # Email Settings
 smtp_server = 'smtp.gmail.com'
 smtp_port = 587
-sender_email = 'saptarshi03official@gmail.com'
-receiver_email = 'ankita05saha03@gmail.com'
+sender_email = ''
+receiver_email = ''
 subject = 'Ultrasonic Sensor Alert'
-body_template = """The ultrasonic sensor detected a distance below 40cm.
+body_template = """The ultrasonic sensor detected a distance below threshold value.
 
 MQTT Broker Link: {mqtt_broker_link}
 Ultrasonic Sensor Topic: {mqtt_topic_ultrasonic}
@@ -78,8 +78,7 @@ def send_email_notification(gmail_username, gmail_password, sensor_data):
 
         email_sent = True
         print("Email notification sent.")
-        telebotcall()  # Call telebotcall function after sending the email
-        take_and_send_picture()  # Call take_and_send_picture function after sending the email
+
     except Exception as e:
         print("Error sending email:", e)
 
@@ -100,8 +99,8 @@ def on_message(client, userdata, message):
 
 try:
     # Prompt the user to enter Gmail credentials
-    gmail_username = 'saptarshi03official@gmail.com'
-    gmail_password = 'alynutopfnozhbpo'
+    gmail_username = ''
+    gmail_password = ''
 
     # Connect to MQTT broker
     mqtt_client.connect(mqtt_broker, mqtt_port)
@@ -120,8 +119,6 @@ try:
         if len(data) == 2:
             angle = int(data[0])
             distance = int(data[1])
-
-            #print("Received from Arduino: Angle =", angle, ", Distance =", distance, "cm")
 
             # Send the data to the MQTT server
             mqtt_client.publish(mqtt_topic_ultrasonic, line)
