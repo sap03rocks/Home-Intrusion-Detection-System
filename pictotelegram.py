@@ -29,7 +29,7 @@ def send_sample_picture(chat_id):
 # Main function
 def main():
     # Replace 'YOUR_CHAT_ID' with the actual chat ID where you want to send the picture
-    chat_id = '1978499299'
+    chat_id =''
 
     # Send the sample picture
     send_sample_picture(chat_id)
